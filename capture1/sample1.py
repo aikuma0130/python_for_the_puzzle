@@ -2,12 +2,15 @@ cap1 = ['F','F','B','B','B','F','B','B','B','F','F','B','F']
 cap2 = ['F','F','B','B','B','F','B','B','B','F','F','F','F']
 def pleaseConformOnepass(caps):
     caps = caps + [caps[0]]
+    start = 0
     for i in range(1, len(caps)):
-        if caps[i] != caps[i-1]:
-            if caps[i] != caps[0]:
-                print('peple in positions', i, end='')
-            else:
-                print(' through', i-1, 'flip your caps!')
+        if caps[i] != caps[start]:
+            if caps[start] != caps[0]:
+                if start != i-1:
+                    print('peple in positions', start, 'through', i-1, 'flip your caps!')
+                else:
+                    print('person at position', start, 'flip your cap!')
+            start = i
 
 def pleaseConform(caps):
     start = forward = backward = 0
