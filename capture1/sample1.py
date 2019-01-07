@@ -7,7 +7,7 @@ def pleaseConformOnepass(caps):
             if caps[i] != caps[0]:
                 print('peple in positions', i, end='')
             else:
-                print(' through', i, 'flip your caps!')
+                print(' through', i-1, 'flip your caps!')
 
 def pleaseConform(caps):
     start = forward = backward = 0
