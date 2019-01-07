@@ -1,7 +1,7 @@
 cap1 = ['F','F','B','B','B','F','B','B','B','F','F','B','F']
 cap2 = ['F','F','B','B','B','F','B','B','B','F','F','F','F']
 def pleaseConformOnepass(caps):
-    caps = caps + [caps[0]]
+    caps = caps + ['END']
     start = 0
     for i in range(1, len(caps)):
         if caps[i] != caps[start]:
@@ -41,3 +41,5 @@ if __name__ == '__main__':
     print("")
     pleaseConformOnepass(cap1)
     #pleaseConformOnepass(cap2)
+    print("")
+    pleaseConformOnepass([])
