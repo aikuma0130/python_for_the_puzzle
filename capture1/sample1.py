@@ -1,5 +1,6 @@
 cap1 = ['F','F','B','B','B','F','B','B','B','F','F','B','F']
 cap2 = ['F','F','B','B','B','F','B','B','B','F','F','F','F']
+cap3 = ['F','F','B','H','B','F','B','B','B','F','H','F','F']
 def pleaseConformOnepass(caps):
     caps = caps + ['END']
     start = 0
@@ -18,11 +19,12 @@ def pleaseConform(caps):
     caps = caps + ['END']
     for i in range(1, len(caps)):
         if caps[start] != caps[i]:
-            intervals.append((start, i-1, caps[start]))
-            if caps[start] == 'F':
-                forward += 1
-            else:
-                backward += 1
+            if caps[start] != 'H':
+                intervals.append((start, i-1, caps[start]))
+                if caps[start] == 'F':
+                    forward += 1
+                else:
+                    backward += 1
             start = i
     if forward < backward:
         flip = 'F'
@@ -43,3 +45,5 @@ if __name__ == '__main__':
     #pleaseConformOnepass(cap2)
     print("")
     pleaseConformOnepass([])
+    print("")
+    pleaseConform(cap3)
