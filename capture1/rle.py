@@ -14,6 +14,11 @@ class RunLength(object):
     @classmethod
     def decode(self, strings):
         decoded_strings = ''
-        for i in range(0, len(strings), 2):
-            decoded_strings += int(strings[i]) * strings[i+1]
+        str_count = ''
+        for i in range(0, len(strings)):
+            if strings[i].isalpha():
+                decoded_strings += int(str_count) * strings[i]
+                str_count = ''
+            else:
+                str_count += strings[i]
         return decoded_strings
